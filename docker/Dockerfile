@@ -8,8 +8,8 @@ RUN mkdir -p $WORKDIR
 
 EXPOSE 8080
 
-ADD target/* $WORKDIR/
-ADD start.sh $$WORKDIR/
-RUN chmod +x $$WORKDIR/start.sh
+ADD docker-jenkins.jar $WORKDIR/
+ADD start.sh $WORKDIR/
+RUN chmod +x $WORKDIR/start.sh
 
-CMD $PMAHOME/start.sh
+CMD $WORKDIR/start.sh
